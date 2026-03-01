@@ -1,0 +1,16 @@
+{
+  "name": "ai-master",
+  "version": "0.1.0",
+  "description": "AI Master — AIOS Project",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"Add your dev command here\"",
+    "build": "echo \"Add your build command here\"",
+    "test": "echo \"No tests configured yet\" && exit 0",
+    "lint": "echo \"No linter configured yet\" && exit 0",
+    "typecheck": "echo \"No typecheck configured yet\" && exit 0"
+  },
+  "keywords": [],
+  "author": "rodrigoanunes19-boop",
+  "license": "MIT"
+}
