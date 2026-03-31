@@ -1,30 +1,53 @@
-# AI Master
+# AlgarSales Platform
 
-> AIOS Project — Initialized with Synkra AIOS
+Plataforma completa de vendas automatizadas via WhatsApp para franquia Algar Telecom.
 
-## Getting Started
+## Produto
+- **Fibra 700 Mega + Globoplay** — R$99,90/mês
+- **Operadora:** Algar Telecom
+
+## Módulos
+
+| Módulo | Descrição | Status |
+|--------|-----------|--------|
+| `maya/` | Agente de vendas IA (SPIN Selling) | 🔄 Em desenvolvimento |
+| `dispatcher/` | Motor de disparo em massa (anti-ban) | 📋 Planejado |
+| `dashboard/` | BKO Dashboard para 2 operadores | 📋 Planejado |
+| `infra/` | Docker Compose + N8N + Evolution API | 📋 Planejado |
+| `scripts/` | Scripts utilitários | 📋 Planejado |
+
+## Stack
+
+- **WhatsApp:** Evolution API
+- **Automação:** N8N
+- **IA:** Claude Haiku API
+- **Banco:** Supabase
+- **Frontend:** Next.js + Vercel
+- **Infra:** Oracle Cloud VPS (ARM) / Hetzner
+
+## Custo estimado
+~R$60/mês (Claude API ~R$30 + chip WhatsApp ~R$30)
+
+## Setup rápido
 
 ```bash
-npm install
-npm run dev
+# 1. Clone o repo
+git clone https://github.com/rodrigoanunes19-boop/ai-master
+
+# 2. Configure as variáveis de ambiente
+cp .env.example .env
+# Edite o .env com suas chaves
+
+# 3. Suba a infra
+cd infra && docker-compose up -d
 ```
 
-## Project Structure
+## Variáveis de ambiente necessárias
 
 ```
-ai-master/
-├── docs/
-│   ├── stories/      # Development stories
-│   ├── prd/          # Product requirements
-│   └── architecture/ # Architecture docs
-├── package.json
-└── README.md
+ANTHROPIC_API_KEY=     # Claude API
+EVOLUTION_API_KEY=     # Evolution API
+SUPABASE_URL=          # Supabase URL
+SUPABASE_KEY=          # Supabase anon key
+WHATSAPP_NUMBER=       # Número WhatsApp dedicado
 ```
-
-## Development Workflow
-
-This project uses Synkra AIOS for AI-orchestrated development.
-
-- Stories live in `docs/stories/`
-- Follow Story-Driven Development (SDD)
-- Use `@dev`, `@qa`, `@architect` agents as needed
